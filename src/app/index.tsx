@@ -6,6 +6,7 @@ const links: { link: Href; description: string }[] = [
   { link: '/user', description: 'User registration' },
   { link: '/student', description: 'Student admission' },
   { link: '/transfer', description: 'Online banking transfer' },
+  { link: '/appointment', description: 'Hospital appointment' },
 ];
 
 export default function HomeScreen() {
