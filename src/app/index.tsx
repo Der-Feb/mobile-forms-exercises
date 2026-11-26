@@ -2,9 +2,10 @@ import { Href, Link } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const links: { link: Href, description: string }[] = [
-  { link: "/user", description: "user registration" }
-]
+const links: { link: Href; description: string }[] = [
+  { link: '/user', description: 'User registration' },
+  { link: '/student', description: 'Student admission' },
+];
 
 export default function HomeScreen() {
   return (
