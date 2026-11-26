@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native';
 
 export function SubmitButton({
-  title, onPress, disabled,
-}: { title: string; onPress: () => void; disabled?: boolean }) {
+  title, onPress, disabled, dimmed,
+}: { title: string; onPress: () => void; disabled?: boolean; dimmed?: boolean }) {
   return (
     <Pressable
-      style={[styles.button, disabled && styles.buttonDisabled]}
+      style={[styles.button, (disabled || dimmed) && styles.buttonDisabled]}
       onPress={onPress}
       disabled={disabled}
     >

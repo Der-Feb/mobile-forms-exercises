@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const links: { link: Href; description: string }[] = [
   { link: '/user', description: 'User registration' },
   { link: '/student', description: 'Student admission' },
+  { link: '/transfer', description: 'Online banking transfer' },
 ];
 
 export default function HomeScreen() {
@@ -21,7 +22,7 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.links}>
-          {links.map((item, ndx) => (          
+          {links.map((item, ndx) => (
             <Link key={ndx}  href={item.link} asChild>
               <Pressable>
                 <Text style={styles.linkText}>{item.description}</Text>

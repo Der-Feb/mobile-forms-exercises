@@ -15,3 +15,4 @@ export function parseISODate(v: string): Date | null {
     date.getFullYear() === y && date.getMonth() === mo - 1 && date.getDate() === d;
   return roundTrips ? date : null;
 }
+export const isDigits = (v: string) => /^\d+$/.test(v);
