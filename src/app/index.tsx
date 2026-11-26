@@ -7,12 +7,12 @@ const links: { link: Href; description: string }[] = [
   { link: '/student', description: 'Student admission' },
   { link: '/transfer', description: 'Online banking transfer' },
   { link: '/appointment', description: 'Hospital appointment' },
+  { link: '/job', description: 'Job application' },
 ];
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      {/* This wrapper takes up all available space and centers your main text */}
       <View style={styles.content}>
         <View style={styles.headingGroup}>
           <Text style={styles.eyebrow}>PRACTICE PROJECT</Text>
@@ -24,7 +24,7 @@ export default function HomeScreen() {
 
         <View style={styles.links}>
           {links.map((item, ndx) => (
-            <Link key={ndx}  href={item.link} asChild>
+            <Link key={ndx} href={item.link} asChild>
               <Pressable>
                 <Text style={styles.linkText}>{item.description}</Text>
               </Pressable>
@@ -33,9 +33,7 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      <Text style={styles.footer_description}>
-        Exercises given by teacher.
-      </Text>
+      <Text style={styles.footer_description}>Exercises given by teacher.</Text>
     </SafeAreaView>
   );
 }
@@ -46,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F8FA',
   },
   content: {
-    flex: 1, // Expands to fill all space above the footer
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 28,
@@ -69,21 +67,21 @@ const styles = StyleSheet.create({
     lineHeight: 36,
     textAlign: 'center',
   },
-  links: {
-    marginTop: 32,
-    textDecorationLine: 'underline',
-    textDecorationColor: '#2878D0',
-    padding: 12,
-    borderRadius: 12
-  },
-  linkText: {
-    color: '#2878D0',
-  },
   description: {
     color: '#667085',
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'center',
+  },
+  links: {
+    marginTop: 32,
+    gap: 12,
+    alignItems: 'center',
+  },
+  linkText: {
+    color: '#2878D0',
+    fontSize: 16,
+    textDecorationLine: 'underline',
   },
   footer_description: {
     fontSize: 14,

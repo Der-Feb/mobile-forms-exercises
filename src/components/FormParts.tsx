@@ -1,8 +1,16 @@
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native';
 
 export function SubmitButton({
-  title, onPress, disabled, dimmed,
-}: { title: string; onPress: () => void; disabled?: boolean; dimmed?: boolean }) {
+  title,
+  onPress,
+  disabled,
+  dimmed,
+}: {
+  title: string;
+  onPress: () => void;
+  disabled?: boolean;
+  dimmed?: boolean;
+}) {
   return (
     <Pressable
       style={[styles.button, (disabled || dimmed) && styles.buttonDisabled]}
@@ -23,8 +31,16 @@ export function SuccessBanner({ message }: { message: string }) {
 }
 
 export function SwitchField({
-  label, value, onValueChange, error,
-}: { label: string; value: boolean; onValueChange: (v: boolean) => void; error?: string }) {
+  label,
+  value,
+  onValueChange,
+  error,
+}: {
+  label: string;
+  value: boolean;
+  onValueChange: (v: boolean) => void;
+  error?: string;
+}) {
   return (
     <View style={{ gap: 6 }}>
       <View style={styles.row}>
@@ -37,10 +53,22 @@ export function SwitchField({
 }
 
 const styles = StyleSheet.create({
-  button: { backgroundColor: '#2878D0', borderRadius: 10, paddingVertical: 14, alignItems: 'center', marginTop: 8 },
+  button: {
+    backgroundColor: '#2878D0',
+    borderRadius: 10,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginTop: 8,
+  },
   buttonDisabled: { backgroundColor: '#98A2B3' },
   buttonText: { color: '#fff', fontSize: 16, fontWeight: '700' },
-  success: { backgroundColor: '#ECFDF3', borderColor: '#12B76A', borderWidth: 1, borderRadius: 10, padding: 12 },
+  success: {
+    backgroundColor: '#ECFDF3',
+    borderColor: '#12B76A',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 12,
+  },
   successText: { color: '#027A48', fontWeight: '600' },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   rowText: { fontSize: 15, color: '#17212F', flexShrink: 1 },
