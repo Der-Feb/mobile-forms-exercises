@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Href, Link } from 'expo-router';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+const links: { link: Href, description: string }[] = [
+  { link: "/user", description: "user registration" }
+]
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
+      {/* This wrapper takes up all available space and centers your main text */}
       <View style={styles.content}>
-        <View style={styles.mark}>
-          <View style={styles.markLine} />
-          <View style={styles.markLine} />
-          <View style={[styles.markLine, styles.shortLine]} />
-        </View>
         <View style={styles.headingGroup}>
           <Text style={styles.eyebrow}>PRACTICE PROJECT</Text>
           <Text style={styles.title}>Mobile Form Exercises</Text>
@@ -17,7 +18,21 @@ export default function HomeScreen() {
             A collection of practical forms built with React Native.
           </Text>
         </View>
+
+        <View style={styles.links}>
+          {links.map((item, ndx) => (          
+            <Link key={ndx}  href={item.link} asChild>
+              <Pressable>
+                <Text style={styles.linkText}>{item.description}</Text>
+              </Pressable>
+            </Link>
+          ))}
+        </View>
       </View>
+
+      <Text style={styles.footer_description}>
+        Exercises given by teacher.
+      </Text>
     </SafeAreaView>
   );
 }
@@ -28,30 +43,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F8FA',
   },
   content: {
-    flex: 1,
+    flex: 1, // Expands to fill all space above the footer
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 28,
-  },
-  mark: {
-    width: 72,
-    height: 72,
-    borderRadius: 22,
-    backgroundColor: '#E9F2FF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 6,
-    marginBottom: 28,
-  },
-  markLine: {
-    width: 30,
-    height: 5,
-    borderRadius: 3,
-    backgroundColor: '#2878D0',
-  },
-  shortLine: {
-    width: 20,
-    alignSelf: 'center',
   },
   headingGroup: {
     alignItems: 'center',
@@ -71,10 +66,25 @@ const styles = StyleSheet.create({
     lineHeight: 36,
     textAlign: 'center',
   },
+  links: {
+    marginTop: 32,
+    textDecorationLine: 'underline',
+    textDecorationColor: '#2878D0',
+    padding: 12,
+    borderRadius: 12
+  },
+  linkText: {
+    color: '#2878D0',
+  },
   description: {
     color: '#667085',
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'center',
+  },
+  footer_description: {
+    fontSize: 14,
+    textAlign: 'center',
+    paddingBottom: 20,
   },
 });
