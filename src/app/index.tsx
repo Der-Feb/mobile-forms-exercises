@@ -9,6 +9,7 @@ const links: { link: Href; description: string }[] = [
   { link: '/appointment', description: 'Hospital appointment' },
   { link: '/job', description: 'Job application' },
   { link: '/checkout', description: 'E-commerce checkout' },
+  { link: '/event', description: 'Event registration' },
 ];
 
 export default function HomeScreen() {
